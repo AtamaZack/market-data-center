@@ -26,12 +26,6 @@ class ItemModal extends Component {
         });
     }
 
-    close_btn = () => {
-        this.setState({
-            modal: !this.state.modal
-        });
-    }
-
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
     };
@@ -93,7 +87,6 @@ class ItemModal extends Component {
                                 type="submit"
                                 color="danger"
                                 style={{marginRight: '2rem', marginBottom: '2rem'}}
-                                onClick={this.close_btn}
                             >Cancel</Button>
                             <Button
                                 outline

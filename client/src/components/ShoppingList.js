@@ -26,14 +26,14 @@ class ShoppingList extends Component {
         const { items, loading } = this.props.item;
         let load_status = '';
         if(loading){
-            load_status = <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
+            load_status = <div className="text-center"><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>;
         }
         return (
             <div>
                 <Container>
                     <ItemModal/>
                     <ListGroup>
-                        <div className="text-center">{load_status}</div>
+                        {load_status}
                         <TransitionGroup className="shopping-list">
                             {items.map(({ _id, name, category }) => (
                                 <CSSTransition key={_id} timeout={500} classNames="fade">

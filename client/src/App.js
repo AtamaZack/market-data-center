@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AppNavbar from './components/AppNavbar'
 import ShoppingList from './components/ShoppingList'
 
@@ -15,8 +15,8 @@ function App () {
         <div className="App">
           <AppNavbar/>
           <div className="container">
-              <h3>Welcome to the MERN Stack App</h3>
-              <span>This is a simple app that covers the MERN Stack technologies</span>
+              <h3>Market Data Center</h3>
+              <span>This application helps to collect market data, Stores, Goods, Clients, Services</span>
           </div><br/>
           <ShoppingList/>
         </div>
