@@ -1,6 +1,7 @@
 // Express router
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 // Item Model
 const Item = require('../../models/Item');
@@ -16,8 +17,8 @@ router.get('/', function (req, res) {
 
 // @route   POST api/items
 // @desc    Create an item
-// @access  Public
-router.post('/', function (req, res) {
+// @access  Private
+router.post('/', auth, function (req, res) {
     const newItem = new Item({
         name: req.body.name,
         category: req.body.category,
@@ -27,8 +28,8 @@ router.post('/', function (req, res) {
 
 // @route   POST api/items
 // @desc    Delete an item
-// @access  Public
-router.delete('/:id', function (req, res) {
+// @access  Private
+router.delete('/:id', auth, function (req, res) {
     Item.findById(req.params.id)
         .then(item => item.remove().then(() => res.json({ success: true })))
         .catch(err => res.status(404).json({ success: false }));
